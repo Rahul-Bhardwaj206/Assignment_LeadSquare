@@ -37,7 +37,8 @@ const Properties = (props) => {
         setData([])
         props.loadPropertiesData()
             .then(resp => {
-                setData(resp[0])
+                if(resp){
+                setData(resp[0])}
             }).catch(error => {
                 console.log(error);
             })
@@ -50,10 +51,10 @@ const Properties = (props) => {
     return (
         <Card className={`p-8 ${classes.cardHeight}`} variant="outlined">
             <Typography component="div"> <Box fontSize={16} fontWeight="fontWeightMedium" ml={1} className='mt-12'>{t("title_properties")}</Box></Typography>
-            <DropDownComponent lable={`${t("lbl_type")}`} setValue={useCallback((e) => setType(e),[])} data={data.type} value={type} />
-            <DropDownComponent lable={`${t("lbl_status")}`} setValue={useCallback((e) => setStatus(e),[])} data={data.status} value={status} />
-            <DropDownComponent lable={`${t("lbl_priority")}`} setValue={useCallback((e) => setPriority(e),[])} data={data.priority} value={priority} />
-            <DropDownComponent lable={`${t("lbl_AssignTo")}`} setValue={useCallback((e) => setAssignTo(e),[])} data={data.assignedTo} value={assignTo} />
+            <DropDownComponent lable={`${t("lbl_type")}`} setValue={useCallback((e) => setType(e),[])} data={data && data.type} value={type} />
+            <DropDownComponent lable={`${t("lbl_status")}`} setValue={useCallback((e) => setStatus(e),[])} data={data && data.status} value={status} />
+            <DropDownComponent lable={`${t("lbl_priority")}`} setValue={useCallback((e) => setPriority(e),[])} data={data && data.priority} value={priority} />
+            <DropDownComponent lable={`${t("lbl_AssignTo")}`} setValue={useCallback((e) => setAssignTo(e),[])} data={data && data.assignedTo} value={assignTo} />
             <Box className='pt-32 text-center'>
                 <Button variant="contained" color="secondary" disableElevation className={classes.button}>
                     {t("btn_update")}

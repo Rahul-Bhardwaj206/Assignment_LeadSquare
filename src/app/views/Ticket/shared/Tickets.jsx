@@ -53,7 +53,7 @@ const Tickets = (props) => {
         setData([])
         props.loadTickets()
             .then(resp => {
-                if (resp) {
+                if (resp && resp.length > 0) {
                     setData(resp)
                 }
             }).catch(error => {
@@ -69,7 +69,7 @@ const Tickets = (props) => {
     return (
         <Card className={`p-8 ${classes.cardBg}`} variant="outlined">
             <Typography component="div"> <Box fontSize="h6.fontSize" fontWeight="fontWeightMedium" mt={1}>{t("title_ticket")}</Box></Typography>
-            <Grid container justifyContent="center" spacing={1}>
+            {data.length > 0 && <Grid container justifyContent="center" spacing={1}>
                 <Grid item xs={4}>
                     <Breadcrumb
                         routeSegments={[
@@ -78,7 +78,7 @@ const Tickets = (props) => {
                     />
                 </Grid>
                 <Grid item xs={8}></Grid>
-            </Grid>
+            </Grid>}
             <Grid container justifyContent='center' className='mt-16'>
                 <Grid item xs={12} className="flex flex-middle position-relative">
                     <Button variant="outlined" size='small'><StarBorderOutlinedIcon fontSize='small' /></Button>

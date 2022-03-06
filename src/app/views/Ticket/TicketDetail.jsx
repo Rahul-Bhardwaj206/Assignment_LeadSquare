@@ -14,9 +14,12 @@ class TicketDetail extends Component {
     };
 
     loadContactDetails() {
+        this.setState({ contactDetail: {} })
         this.props.loadContactDetails()
             .then(resp => {
-                this.setState({ contactDetail: resp[0] })
+                if (resp) {
+                    this.setState({ contactDetail: resp[0] })
+                }
             }).catch(error => {
                 console.log(error);
             })
@@ -38,7 +41,7 @@ class TicketDetail extends Component {
                         <Properties />
                     </Grid>
                     <Grid item xs={2}>
-                        {contactDetail && <ContactDetail data={contactDetail} />}
+                        <ContactDetail data={contactDetail} />
                     </Grid>
                 </Grid>
             </div>
