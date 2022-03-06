@@ -2,9 +2,10 @@ import { Box, Button, Card, FormControl, InputLabel, MenuItem, Select, Typograph
 import React, { useCallback, useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { loadPropertiesData } from 'app/camunda_redux/redux/action/index'
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import DropDownComponent from './DropDownComponent';
+import { setSnackbar } from 'app/camunda_redux/redux/ducks/snackbar';
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -26,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Properties = (props) => {
     const classes = useStyles();
+    const dispatch = useDispatch();
     const { t } = useTranslation()
     const [type, setType] = useState("Question")
     const [status, setStatus] = useState("Open")
@@ -33,12 +35,15 @@ const Properties = (props) => {
     const [assignTo, setAssignTo] = useState("John")
     const [data, setData] = useState([])
 
+    const callMessageOut = (message) => {
+        dispatch(setSnackbar(true, "error", message));
+    }
+
     const loadPropertiesData = useCallback(() => {
         setData([])
         props.loadPropertiesData()
             .then(resp => {
-                if(resp){
-                setData(resp[0])}
+                !resp.error ? setData(resp[0]) : callMessageOut("Properties : There is some issue with api call")
             }).catch(error => {
                 console.log(error);
             })

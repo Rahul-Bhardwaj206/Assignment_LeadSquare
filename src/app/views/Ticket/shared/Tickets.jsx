@@ -12,8 +12,9 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { makeStyles } from '@material-ui/core/styles';
 import TicketCard from './Ticket_Card';
 import { loadTickets } from 'app/camunda_redux/redux/action/index'
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { setSnackbar } from 'app/camunda_redux/redux/ducks/snackbar';
 
 const options = [
     'Forward All',
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Tickets = (props) => {
     const classes = useStyles()
+    const dispatch = useDispatch();
     const { t } = useTranslation()
     const [anchorEl, setAnchorEl] = React.useState(null)
     const [data, setData] = React.useState([])
@@ -49,13 +51,15 @@ const Tickets = (props) => {
         setAnchorEl(event.currentTarget);
     };
 
+    const callMessageOut = (message) => {
+        dispatch(setSnackbar(true, "error", message));
+    }
+
     const loadAllTickets = () => {
         setData([])
         props.loadTickets()
             .then(resp => {
-                if (resp && resp.length > 0) {
-                    setData(resp)
-                }
+                !resp.error && resp.length > 0 ? setData(resp) : callMessageOut("Tickets : There is some issue with api call")
             }).catch(error => {
                 console.log(error);
             })
