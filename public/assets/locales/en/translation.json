@@ -1,0 +1,23 @@
+{
+    "new_ticket": "New Ticket",
+    "Contact_Details": "Contact Details",
+    "btn_edit": "Edit",
+    "lbl_email": "Email",
+    "lbl_workphone": "Work Phone",
+    "lbl_timelog": "Time Logs",
+    "lbl_todo": "To-Do",
+    "title_properties": "Properties",
+    "lbl_type": "Type",
+    "lbl_status": "Status",
+    "lbl_priority": "Priority",
+    "lbl_AssignTo": "Assign To",
+    "btn_update": "Update",
+    "title_ticket": "All Tickets",
+    "breadcrum_detail": "Overdue by 21 Days",
+    "btn_reply": "Reply",
+    "btn_AddNote": "Add Note",
+    "btn_Forward": "Forward",
+    "btn_close": "Close",
+    "btn_merge": "Merge",
+    "btn_delete": "Delete"
+}

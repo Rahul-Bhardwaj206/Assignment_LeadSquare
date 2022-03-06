@@ -1,0 +1,141 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "johndoe@abc.com",
+      "gender": "Male",
+      "contact": "(+91) 9898125387",
+      "timeLog": [
+        {
+          "key": 1,
+          "value": "09:00 am"
+        },
+        {
+          "key": 2,
+          "value": "02:00 pm"
+        },
+        {
+          "key": 3,
+          "value": "08:00 pm"
+        }
+      ],
+      "Todo": [
+        {
+          "key": 1,
+          "value": "Morning Scrum"
+        },
+        {
+          "key": 2,
+          "value": "Working on Task"
+        },
+        {
+          "key": 3,
+          "value": "Having Lunch"
+        },
+        {
+          "key": 4,
+          "value": "Day off"
+        }
+      ]
+    }
+  ],
+  "tickets": [
+    {
+      "id": 1,
+      "subject": "Need to change my shipping address",
+      "time": "March 05, 2022 at 11:00 am",
+      "user_addressed": "Jhon Deo",
+      "second_heading": "reported an issue",
+      "content": [
+        "Hi,",
+        "I have to leave the city for a week and I'm afraid nobody will be there to collect my order(#248) when it arrives.",
+        "Is there a way I can change my shipping address? ",
+        "Thanks."
+      ],
+      "question": true,
+      "profile_pic": "/assets/images/face-6.jpg"
+    },
+    {
+      "id": 2,
+      "subject": "Customer Service",
+      "time": "March 05, 2022 at 04:00 pm",
+      "user_addressed": "Replied to",
+      "second_heading": "test@test.com",
+      "content": [
+        "Hi Jhon,",
+        "You can change your shipment address as long as your order has not been dispatched for delivery",
+        "Follow these steps to change the details of your order :-",
+        "01. Go to my order",
+        "02. Click on the edit details icon for orders which you would like to update.",
+        "03. Update the required changes & save changes.",
+        "04. Click done after you have finished.",
+        "I hope this was helpfull. If you have further doubts, feel fee to reach out to me.",
+        "Customer Support"
+      ],
+      "question": false,
+      "profile_pic": "/assets/images/face-5.jpg"
+    }
+  ],
+  "properties": [
+    {
+      "type": [
+        {
+          "key": 1,
+          "value": "Question"
+        },
+        {
+          "key": 2,
+          "value": "Responded"
+        },
+        {
+          "key": 3,
+          "value": "InProgress"
+        }
+      ],
+      "status": [
+        {
+          "key": 1,
+          "value": "Open"
+        },
+        {
+          "key": 2,
+          "value": "Close"
+        },
+        {
+          "key": 3,
+          "value": "In Progress"
+        }
+      ],
+      "priority": [
+        {
+          "key": 1,
+          "value": "Low"
+        },
+        {
+          "key": 2,
+          "value": "Medium"
+        },
+        {
+          "key": 3,
+          "value": "High"
+        }
+      ],
+      "assignedTo": [
+        {
+          "key": 1,
+          "value": "John"
+        },
+        {
+          "key": 2,
+          "value": "Peter"
+        },
+        {
+          "key": 3,
+          "value": "Victor"
+        }
+      ]
+    }
+  ]
+}

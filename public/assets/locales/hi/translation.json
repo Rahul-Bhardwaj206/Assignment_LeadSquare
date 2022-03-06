@@ -1,0 +1,23 @@
+{
+    "new_ticket": "नया टिकट",
+    "Contact_Details": "संपर्क विवरण",
+    "btn_edit": "संपादित करें",
+    "lbl_email": "ईमेल",
+    "lbl_workphone": "कार्य फ़ोन",
+    "lbl_timelog": "समय लॉग",
+    "lbl_todo": "हुल्लक़",
+    "title_properties": "गुण",
+    "lbl_type": "प्रकार",
+    "lbl_status": "स्थिति",
+    "lbl_priority": "वरीयता",
+    "lbl_AssignTo": "के लिए आवंटित",
+    "btn_update": "अपडेट करें",
+    "title_ticket": "सभी टिकट",
+    "breadcrum_detail": "21 दिनों से अतिदेय",
+    "btn_reply": "उत्तर",
+    "btn_AddNote": "नोट जोड़े",
+    "btn_Forward": "अग्रिम",
+    "btn_close": "बंद करना",
+    "btn_merge": "मर्ज",
+    "btn_delete": "हटाएं"
+}
