@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ContactDetail = ({ data }) => {
-    const classes = useStyles();
-    const { t } = useTranslation()
+    const classes = useStyles(); // importing makeStyles which contains MUI styles
+    const { t } = useTranslation() // used useTranslation hook to fetch localization
     const [timelog, setTimelog] = React.useState('');
     const [todo, setTodo] = React.useState('');
     return (

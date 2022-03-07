@@ -39,7 +39,7 @@ const Properties = (props) => {
         dispatch(setSnackbar(true, "error", message));
     }
 
-    const loadPropertiesData = useCallback(() => {
+    const loadPropertiesData = useCallback(() => { // loading data from API for all the dropdown
         setData([])
         props.loadPropertiesData()
             .then(resp => {

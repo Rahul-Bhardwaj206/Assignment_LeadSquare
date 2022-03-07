@@ -8,12 +8,12 @@ import ContactDetail from "./shared/ContactDetail";
 import Properties from "./shared/Properties";
 import Tickets from "./shared/Tickets";
 
-class TicketDetail extends Component {
+class TicketDetail extends Component { //entry point of Ticket details component
     state = {
         contactDetail: {}
     };
 
-    loadContactDetails() {
+    loadContactDetails() { // API call to fetch contact details & pass ot as a prop
         this.setState({ contactDetail: {} })
         this.props.loadContactDetails()
             .then(resp => {
@@ -35,7 +35,7 @@ class TicketDetail extends Component {
             <div className="m-sm-30">
                 <Grid container justifyContent="center" spacing={1}>
                     <Grid item xs={8}>
-                        <Tickets />
+                        <Tickets /> 
                     </Grid>
                     <Grid item xs={2}>
                         <Properties />

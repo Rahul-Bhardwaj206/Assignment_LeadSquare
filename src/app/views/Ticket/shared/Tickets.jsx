@@ -55,7 +55,7 @@ const Tickets = (props) => {
         dispatch(setSnackbar(true, "error", message));
     }
 
-    const loadAllTickets = () => {
+    const loadAllTickets = () => { // To fetch tickets data
         setData([])
         props.loadTickets()
             .then(resp => {
@@ -65,9 +65,7 @@ const Tickets = (props) => {
             })
     }
 
-    useEffect(() => {
-        loadAllTickets()
-    }, [])
+    useEffect(() => { loadAllTickets() }, [])
 
 
     return (
